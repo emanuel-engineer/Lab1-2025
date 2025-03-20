@@ -9,6 +9,7 @@ char convertirAMinuscula(char caracter);
 int Problema_1();
 int Problema_2();
 int Problema_3();
+int Problema_4();
 int main();
 //etc...
 
@@ -230,6 +231,60 @@ int Problema_3()
 }
 
 
+int Problema_4()
+{
+
+  /*TO DO
+   Implementar el volver a main de problema 4 a los demás.*/
+  int hora;
+  int minuto;
+  cout<<"Ingese una hora en formato militar, sin puntos decimales, ni dos puntos (:). Ej. 14 (2pm) : "<< endl;
+  cin >> hora;
+  cout<<"Ingese los minutos: "<< endl;
+  cin >> minuto;
+
+  if (minuto >=60){
+    cout<<"ERROR. Los minutos no pueden ser mayor a 59"<<endl;
+    //Volver a MAIN
+        cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+        cout << "Ingrese 1 para repetir este programa."<<endl;
+        cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+        int opcion;
+        cin >> opcion;
+        switch (opcion) {
+          case 0:
+          main();
+            break;
+        case 1:
+          Problema_4();
+          break;
+        }
+  }
+
+  if (hora >= 24){
+    cout<< "ERROR. La hora no puede ser mayor a 24"<< endl;
+    //Volver a MAIN
+        cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+        cout << "Ingrese 1 para repetir este programa."<<endl;
+        cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+        int opcion;
+        cin >> opcion;
+        switch (opcion) {
+          case 0:
+          main();
+            break;
+        case 1:
+          Problema_4();
+          break;
+        }
+  }
+
+
+
+  return 0;
+}
 //MENU
 int main ()
 {
@@ -240,6 +295,7 @@ int main ()
   cout << " | 1). Punto 1..... | " << endl;
   cout << " | 2). Punto 2..... | " << endl;
   cout << " | 3). Punto 3..... | " << endl;
+  cout << " | 4). Punto 4..... | " << endl;
   //Otras opciones
 
 
@@ -247,6 +303,7 @@ int main ()
 
   cout << " Ingresa una opcion:  ";
   cin >> opcion ;
+
 
 
  switch(opcion)
@@ -260,6 +317,9 @@ int main ()
       break;
  case 3:
   Problema_3();
+     break;
+ case 4:
+  Problema_4();
      break;
  }
   //etc...
