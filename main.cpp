@@ -10,6 +10,9 @@ int Problema_1();
 int Problema_2();
 int Problema_3();
 int Problema_4();
+int Problema_5();
+int Problema_6();
+
 int main();
 //etc...
 
@@ -46,7 +49,7 @@ int Problema_1()
     bool encontradoEnvocal = false;
     bool encontradoEnabcd = false;
 
-    // Buscar en la primera lista
+    // buscar en la primera lista (consonantes)
     for (int i = 0; i < tamanoL1; ++i) {
         if (vocal[i] == letraMIN) {
             encontradoEnvocal = true;
@@ -54,8 +57,8 @@ int Problema_1()
         }
     }
 
-    // Buscar en la segunda lista
-    if (!encontradoEnvocal) { // Solo buscar en la segunda lista si no se encontró en la primera
+    // buscar en la segunda lista (vocales)
+    if (!encontradoEnvocal) { // solo buscar en la segunda lista si no se encontró en la primera
         for (int i = 0; i < tamanoL2; ++i) {
             if (abcd[i] == letraMIN) {
                 encontradoEnabcd = true;
@@ -64,7 +67,7 @@ int Problema_1()
         }
     }
 
-    // Mostrar el resultado
+    // mostrar el resultado
     if (encontradoEnvocal) {
         cout << letra << " es una vocal." << endl;
     } else if (encontradoEnabcd) {
@@ -74,18 +77,21 @@ int Problema_1()
     }
 
 
-//Volver a MAIN
-    cout << "Ingrese 0 (cero) para volver al menu."<<endl;
-    cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+    //Volver a MAIN
+        cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+        cout << "Ingrese 1 para repetir este programa."<<endl;
+        cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
 
-    int opcion;
-    cin >> opcion;
-    switch (opcion) {
-      case 0:
-      main();
-        break;
-          }
-
+        int opcion;
+        cin >> opcion;
+        switch (opcion) {
+          case 0:
+          main();
+            break;
+        case 1:
+          Problema_1();
+          break;
+        }
     return 0;
 
 
@@ -146,6 +152,7 @@ if (cantidad > 0) {
 
 //Volver a MAIN
     cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+    cout << "Ingrese 1 para repetir este programa."<<endl;
     cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
 
     int opcion;
@@ -154,6 +161,9 @@ if (cantidad > 0) {
       case 0:
       main();
         break;
+    case 1:
+      Problema_2();
+      break;
     }
 
 
@@ -174,6 +184,7 @@ int Problema_3()
     cout<< mes <<  " Es un mes invalido." << endl;
     //Volver a MAIN
         cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+        cout << "Ingrese 1 para repetir este programa."<<endl;
         cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
 
         int opcion;
@@ -182,6 +193,9 @@ int Problema_3()
           case 0:
           main();
             break;
+        case 1:
+          Problema_3();
+          break;
         }
   }
 
@@ -194,6 +208,7 @@ int Problema_3()
     cout<< dia << " Es un dia invalido." << endl;
     //Volver a MAIN
         cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+        cout << "Ingrese 1 para repetir este programa."<<endl;
         cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
 
         int opcion;
@@ -202,6 +217,9 @@ int Problema_3()
           case 0:
           main();
             break;
+        case 1:
+          Problema_3();
+          break;
         }
   }
 
@@ -244,7 +262,7 @@ int Problema_4()
   cin >> minuto;
 
   if (minuto >=60){
-    cout<<"ERROR. Los minutos no pueden ser mayor a 59"<<endl;
+    cout<<hora<<minuto<< " es un tiempo invalido"<< endl;
     //Volver a MAIN
         cout << "Ingrese 0 (cero) para volver al menu."<<endl;
         cout << "Ingrese 1 para repetir este programa."<<endl;
@@ -260,10 +278,8 @@ int Problema_4()
           Problema_4();
           break;
         }
-  }
-
-  if (hora >= 24){
-    cout<< "ERROR. La hora no puede ser mayor a 24"<< endl;
+  } else if (hora >= 24){
+    cout<<hora<<minuto<< " es un tiempo invalido"<< endl;
     //Volver a MAIN
         cout << "Ingrese 0 (cero) para volver al menu."<<endl;
         cout << "Ingrese 1 para repetir este programa."<<endl;
@@ -279,15 +295,87 @@ int Problema_4()
           Problema_4();
           break;
         }
+  } else {
+  cout << "La hora es "<< hora<< minuto<< endl;
+  //Volver a MAIN
+      cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+      cout << "Ingrese 1 para repetir este programa."<<endl;
+      cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+      int opcion;
+      cin >> opcion;
+      switch (opcion) {
+        case 0:
+        main();
+          break;
+      case 1:
+        Problema_4();
+        break;
+      }
   }
 
 
 
   return 0;
 }
-//MENU
-int main ()
+
+
+int Problema_5()
 {
+  int valor;
+
+  cout<< "Ingrese un numero: ";
+  cin >> valor;
+
+  for (int i = 0 ; i <= valor ; ++i ){
+
+    //dar formato a la salida
+    for (int j = 0; j < valor - i; ++j) {
+               cout << " ";
+           }
+//Imprimir asteriscos
+    for (int j =1 ; j <= i ; ++j){
+      cout <<"* ";
+    }
+    //Cambiar de linea despues de cada fila
+    cout<<endl;
+
+  }
+
+  //Para el decrecimiento
+      for (int i = valor - 1; i >= 1; --i) {
+          // espacios para centrar la línea
+          for (int j = 0; j < valor - i; ++j) {
+              cout << " ";
+          }
+          //Imprimir asteriscos
+          for (int j = 1; j <= i; ++j) {
+              cout << "* ";
+          }
+          // Cambiar de línea después de cada fila
+          cout << endl;
+      }
+
+      //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+    case 0:
+    main();
+      break;
+  case 1:
+    Problema_5();
+    break;
+  }
+return 0;
+}
+
+//MENU
+int main (){
   int opcion;
 
 
@@ -296,6 +384,8 @@ int main ()
   cout << " | 2). Punto 2..... | " << endl;
   cout << " | 3). Punto 3..... | " << endl;
   cout << " | 4). Punto 4..... | " << endl;
+  cout << " | 5). Punto 5..... | " << endl;
+  cout << " | 6). Punto 6..... | " << endl;
   //Otras opciones
 
 
@@ -321,6 +411,12 @@ int main ()
  case 4:
   Problema_4();
      break;
+ case 5:
+  Problema_5();
+     break;
+ case 6:
+   Problema_6();
+   break;
  }
   //etc...
  return 0;
