@@ -12,6 +12,7 @@ int Problema_3();
 int Problema_4();
 int Problema_5();
 int Problema_6();
+double aproximarEuler(int n);
 
 int main();
 //etc...
@@ -373,6 +374,47 @@ int Problema_5()
   }
 return 0;
 }
+
+
+double aproximarEuler(int n) {
+    double e = 1.0;
+    double factorial = 1.0;
+    for (int i = 1; i <= n; ++i) {
+        factorial *= i;
+        e += 1.0 / factorial;
+    }
+    return e;
+}
+
+
+int Problema_6(){
+
+  int n;
+  cout << "Ingrese el numero de elementos para aproximar e: ";
+  cin >> n;
+  double e = aproximarEuler(n);
+  cout << "e es aproximadamente: " << e << endl;
+
+
+  //Volver a MAIN
+cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+cout << "Ingrese 1 para repetir este programa."<<endl;
+cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+int opcion;
+cin >> opcion;
+switch (opcion) {
+case 0:
+main();
+  break;
+case 1:
+Problema_6();
+break;
+}
+
+  return 0;
+}
+
 
 //MENU
 int main (){
