@@ -13,6 +13,7 @@ int Problema_4();
 int Problema_5();
 int Problema_6();
 double aproximarEuler(int n);
+int Problema_7();
 
 int main();
 //etc...
@@ -231,9 +232,6 @@ int Problema_3()
   }
 /*Se verifica que la fecha sea correcta, de lo contrario, se devuelve al menú.
  * Si es correcta, se imprime con el formato deseado*/
-
-
-
   //Volver a MAIN
       cout << "Ingrese 0 (cero) para volver al menu."<<endl;
       cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
@@ -416,6 +414,28 @@ break;
 }
 
 
+int Problema_7(){
+  int n;
+      cout << "Ingrese un numero n: ";
+      cin >> n;
+
+      int a = 1, b = 1, c = 0;
+      int suma = 0;
+
+      while (b < n) {
+          if (b % 2 == 0) {
+              suma += b;
+          }
+          c = a + b;
+          a = b;
+          b = c;
+      }
+
+      cout << "El resultado de la suma es: " << suma << endl;
+  return 0;
+}
+
+
 //MENU
 int main (){
   int opcion;
@@ -428,6 +448,7 @@ int main (){
   cout << " | 4). Punto 4..... | " << endl;
   cout << " | 5). Punto 5..... | " << endl;
   cout << " | 6). Punto 6..... | " << endl;
+  cout << " | 7). Punto 7..... | " << endl;
   //Otras opciones
 
 
@@ -458,6 +479,9 @@ int main (){
      break;
  case 6:
    Problema_6();
+   break;
+ case 7:
+   Problema_7();
    break;
  }
   //etc...
