@@ -14,6 +14,10 @@ int Problema_5();
 int Problema_6();
 double aproximarEuler(int n);
 int Problema_7();
+int Problema_8();
+int Problema_9();
+
+
 
 int main();
 //etc...
@@ -432,6 +436,71 @@ int Problema_7(){
       }
 
       cout << "El resultado de la suma es: " << suma << endl;
+
+      //Volver a MAIN
+    cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+    cout << "Ingrese 1 para repetir este programa."<<endl;
+    cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+    int opcion;
+    cin >> opcion;
+    switch (opcion) {
+    case 0:
+    main();
+      break;
+    case 1:
+    Problema_7();
+    break;
+    }
+  return 0;
+}
+
+
+int Problema_8(){
+
+  int a , b , c ;
+
+  int suma = 0 ;
+
+  cout << "ingrese tres numeros a,b,c : " ;
+  cin >> a >> b >> c ;
+
+  for (int i = 1 ; i * a < c ; ++i){
+    suma += i * a;
+  }
+
+  for (int i = 1; i * b < c; ++i) {
+          if ((i * b) % a != 0) {
+              suma += i * b;
+          }
+  }
+
+      cout << "La sumatoria es: " << suma << endl;
+
+      //Volver a MAIN
+    cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+    cout << "Ingrese 1 para repetir este programa."<<endl;
+    cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+    int opcion;
+    cin >> opcion;
+    switch (opcion) {
+    case 0:
+    main();
+      break;
+    case 1:
+    Problema_7();
+    break;
+    }
+  return 0;
+}
+
+
+int Problema_9(){
+
+
+
+
   return 0;
 }
 
@@ -449,6 +518,8 @@ int main (){
   cout << " | 5). Punto 5..... | " << endl;
   cout << " | 6). Punto 6..... | " << endl;
   cout << " | 7). Punto 7..... | " << endl;
+  cout << " | 8). Punto 8..... | " << endl;
+  cout << " | 9). Punto 9..... | " << endl;
   //Otras opciones
 
 
@@ -482,6 +553,12 @@ int main (){
    break;
  case 7:
    Problema_7();
+   break;
+ case 8:
+   Problema_8();
+   break;
+ case 9:
+   Problema_9();
    break;
  }
   //etc...
