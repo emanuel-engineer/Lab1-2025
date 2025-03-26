@@ -16,7 +16,7 @@ double aproximarEuler(int n);
 int Problema_7();
 int Problema_8();
 int Problema_9();
-
+void Problema_10();
 
 
 int main();
@@ -498,13 +498,53 @@ int Problema_8(){
 
 int Problema_9(){
 
+  int n;
 
+  cout << "ingrese un numero entero N: ";
+  cin >> n ;
+  int suma = 0;
+  int temp = n;
 
+  while (temp > 0) {
+      int digito = temp % 10;
+      int potencia = 1;
+      for (int i = 0; i < digito; ++i) {
+          potencia *= digito;
+      }
+      suma += potencia;
+      temp /= 10;
+  }
+
+  cout << "El resultado de la suma es: " << suma << endl;
 
   return 0;
 }
 
+bool esPrimo(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
 
+void Problema_10() {
+    int n;
+    cout << "Ingrese un numero n: ";
+    cin >> n;
+
+    int contador = 0;
+    int numero = 2;
+
+    while (contador < n) {
+        if (esPrimo(numero)) {
+            contador++;
+        }
+        numero++;
+    }
+
+    cout << "El primo numero " << n << " es: " << numero - 1 << endl;
+}
 //MENU
 int main (){
   int opcion;
@@ -520,6 +560,7 @@ int main (){
   cout << " | 7). Punto 7..... | " << endl;
   cout << " | 8). Punto 8..... | " << endl;
   cout << " | 9). Punto 9..... | " << endl;
+  cout << " | 10). Punto 10... | " << endl;
   //Otras opciones
 
 
@@ -559,6 +600,9 @@ int main (){
    break;
  case 9:
    Problema_9();
+   break;
+ case 10:
+   Problema_10();
    break;
  }
   //etc...
