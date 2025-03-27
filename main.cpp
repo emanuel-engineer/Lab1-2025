@@ -19,6 +19,7 @@ int Problema_9();
 int Problema_10();
 int Problema_11();
 int Problema_12();
+int Problema_13();
 
 int main();
 //etc...
@@ -661,6 +662,39 @@ int Problema_12() {
 return 0;
 }
 
+int Problema_13() {
+    int n;
+    cout << "Ingrese un numero n: ";
+    cin >> n;
+
+    int suma = 0;
+
+    for (int i = 2; i < n; ++i) {
+        if (esPrimo(i)) {
+            suma += i;
+        }
+    }
+
+    cout << "El resultado de la suma es: " << suma << endl;
+
+
+    //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+  case 0:
+    main();
+    break;
+  case 1:
+  Problema_13();
+  break;
+  }
+    return 0;
+}
 
 //MENU
 int main (){
@@ -720,6 +754,9 @@ int main (){
    break;
  case 12:
    Problema_12();
+   break;
+ case 13:
+   Problema_13();
    break;
  }
   //etc...
