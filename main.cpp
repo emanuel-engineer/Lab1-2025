@@ -20,9 +20,11 @@ int Problema_10();
 int Problema_11();
 int Problema_12();
 int Problema_13();
+bool esPalindromo(int n);
 int Problema_14();
 int Problema_15();
 int Problema_16();
+
 
 int main();
 //etc...
@@ -728,6 +730,23 @@ int Problema_14() {
 
     cout << factor1 << "*" << factor2 << "=" << maxPalindromo << endl;
 
+
+    //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+  case 0:
+    main();
+    break;
+  case 1:
+  Problema_14();
+  break;
+  }
+
     return 0;
 }
 
@@ -792,6 +811,9 @@ int main (){
    break;
  case 13:
    Problema_13();
+   break;
+ case 14:
+   Problema_14();
    break;
  }
   //etc...
