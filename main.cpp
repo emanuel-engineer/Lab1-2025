@@ -20,6 +20,9 @@ int Problema_10();
 int Problema_11();
 int Problema_12();
 int Problema_13();
+int Problema_14();
+int Problema_15();
+int Problema_16();
 
 int main();
 //etc...
@@ -693,6 +696,38 @@ int Problema_13() {
   Problema_13();
   break;
   }
+    return 0;
+}
+
+bool esPalindromo(int n) {
+    int original = n;
+    int invertido = 0;
+
+    while (n > 0) {
+        invertido = invertido * 10 + n % 10;
+        n /= 10;
+    }
+
+    return original == invertido;
+}
+
+int Problema_14() {
+    int maxPalindromo = 0;
+    int factor1 = 0, factor2 = 0;
+
+    for (int i = 100; i < 1000; ++i) {
+        for (int j = 100; j < 1000; ++j) {
+            int producto = i * j;
+            if (esPalindromo(producto) && producto > maxPalindromo) {
+                maxPalindromo = producto;
+                factor1 = i;
+                factor2 = j;
+            }
+        }
+    }
+
+    cout << factor1 << "*" << factor2 << "=" << maxPalindromo << endl;
+
     return 0;
 }
 
