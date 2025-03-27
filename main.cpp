@@ -16,8 +16,9 @@ double aproximarEuler(int n);
 int Problema_7();
 int Problema_8();
 int Problema_9();
-void Problema_10();
-
+int Problema_10();
+int Problema_11();
+int Problema_12();
 
 int main();
 //etc...
@@ -103,7 +104,6 @@ int Problema_1()
 
 }
 
-
 int Problema_2()
 {
 //definimos que billetes y monedas se van a usar.
@@ -175,7 +175,6 @@ if (cantidad > 0) {
 
   return 0;
 }
-
 
 int Problema_3()
 {
@@ -251,7 +250,6 @@ int Problema_3()
   return 0;
 }
 
-
 int Problema_4()
 {
 
@@ -322,7 +320,6 @@ int Problema_4()
   return 0;
 }
 
-
 int Problema_5()
 {
   int valor;
@@ -377,7 +374,6 @@ int Problema_5()
 return 0;
 }
 
-
 double aproximarEuler(int n) {
     double e = 1.0;
     double factorial = 1.0;
@@ -387,7 +383,6 @@ double aproximarEuler(int n) {
     }
     return e;
 }
-
 
 int Problema_6(){
 
@@ -416,7 +411,6 @@ break;
 
   return 0;
 }
-
 
 int Problema_7(){
   int n;
@@ -455,7 +449,6 @@ int Problema_7(){
   return 0;
 }
 
-
 int Problema_8(){
 
   int a , b , c ;
@@ -489,12 +482,11 @@ int Problema_8(){
     main();
       break;
     case 1:
-    Problema_7();
+    Problema_8();
     break;
     }
   return 0;
 }
-
 
 int Problema_9(){
 
@@ -517,6 +509,23 @@ int Problema_9(){
 
   cout << "El resultado de la suma es: " << suma << endl;
 
+
+  //Volver a MAIN
+cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+cout << "Ingrese 1 para repetir este programa."<<endl;
+cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+int opcion;
+cin >> opcion;
+switch (opcion) {
+case 0:
+main();
+  break;
+case 1:
+Problema_9();
+break;
+}
+
   return 0;
 }
 
@@ -528,7 +537,7 @@ bool esPrimo(int n) {
     return true;
 }
 
-void Problema_10() {
+int Problema_10() {
     int n;
     cout << "Ingrese un numero n: ";
     cin >> n;
@@ -544,23 +553,125 @@ void Problema_10() {
     }
 
     cout << "El primo numero " << n << " es: " << numero - 1 << endl;
+
+
+    //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+  case 0:
+  main();
+    break;
+  case 1:
+  Problema_10();
+  break;
+  }
+return 0;
 }
+
+int mcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int mcm(int a, int b) {
+    return a * (b / mcd(a, b));
+}
+
+int Problema_11() {
+    int n;
+    cout << "Ingrese un numero n: ";
+    cin >> n;
+
+    int resultado = 1;
+
+    for (int i = 2; i <= n; ++i) {
+        resultado = mcm(resultado, i);
+    }
+
+    cout << "El minimo comun multiplo es: " << resultado << endl;
+
+    //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+  case 0:
+  main();
+    break;
+  case 1:
+  Problema_11();
+  break;
+  }
+    return 0;
+}
+
+int Problema_12() {
+    int n;
+    cout << "Ingrese un numero: ";
+    cin >> n;
+
+    int maxFactor = 1;
+
+    while (n % 2 == 0) {
+        maxFactor = 2;
+        n /= 2;
+    }
+
+    for (int i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            maxFactor = i;
+            n /= i;
+        }
+    }
+
+    if (n > 2) {
+        maxFactor = n;
+    }
+
+    cout << "El mayor factor primo de " << n << " es: " << maxFactor << endl;
+
+
+    //Volver a MAIN
+  cout << "Ingrese 0 (cero) para volver al menu."<<endl;
+  cout << "Ingrese 1 para repetir este programa."<<endl;
+  cout << "Ingrese otro numero (cualquiera) para cerrar el programa"<< endl;
+
+  int opcion;
+  cin >> opcion;
+  switch (opcion) {
+  case 0:
+  main();
+    break;
+  case 1:
+  Problema_12();
+  break;
+  }
+return 0;
+}
+
+
 //MENU
 int main (){
   int opcion;
 
 
   cout << " -----BIENVENID@----- " << endl;
-  cout << " | 1). Punto 1..... | " << endl;
-  cout << " | 2). Punto 2..... | " << endl;
-  cout << " | 3). Punto 3..... | " << endl;
-  cout << " | 4). Punto 4..... | " << endl;
-  cout << " | 5). Punto 5..... | " << endl;
-  cout << " | 6). Punto 6..... | " << endl;
-  cout << " | 7). Punto 7..... | " << endl;
-  cout << " | 8). Punto 8..... | " << endl;
-  cout << " | 9). Punto 9..... | " << endl;
-  cout << " | 10). Punto 10... | " << endl;
+  cout << " | Ingrese un numero | " << endl;
+  cout << " | 1-17 para ver el  | " << endl;
+  cout << " | problema corres-  | " << endl;
+  cout << " | pondiente.        | " << endl;
   //Otras opciones
 
 
@@ -603,6 +714,12 @@ int main (){
    break;
  case 10:
    Problema_10();
+   break;
+ case 11:
+   Problema_11();
+   break;
+ case 12:
+   Problema_12();
    break;
  }
   //etc...
